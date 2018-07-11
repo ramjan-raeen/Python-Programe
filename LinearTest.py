@@ -20,42 +20,18 @@ data = pandas.read_csv('F:\Anaconda\iris.csv')
 X = numpy.array(data[['x1', 'x2']])
 y = numpy.array(data['y'])
 
+#check check labeled data 
+print(X)
 
-# In[4]:
+#check label
+print(y)
 
-
-X
-
-
-# In[5]:
-
-
-y
-
-
-# In[6]:
-
-
-#from sklearn.tree import DecisionTreeClassifier
-#from sklearn.linear_model import LogisticRegression
-#from sklearn.ensemble import GradientBoostingClassifier
-#from sklearn.svm import SVC
-#classifier=LogisticRegression()
-#classifier.fit(X,y)
-#classifier=GradientBoostingClassifier()
-#classifier.fit(X,y)
-#classifier=SVC(kernel = 'rbf', degree = 300)
-#classifier.fit(X,y)
-#classifier = DecisionTreeClassifier()
-#classifier.fit(X,y)
+# Fit data by using Logistic Regression
 from sklearn.linear_model import LogisticRegression
 classifier=LogisticRegression()
 classifier.fit(X,y)
 
-
-# In[7]:
-
-
+# Fit data by using Decision Tree Classifier
 from sklearn.tree import DecisionTreeClassifier
 classifier = DecisionTreeClassifier()
 classifier.fit(X,y)
@@ -63,7 +39,7 @@ classifier.fit(X,y)
 
 # In[8]:
 
-
+Fit data by using suport vector machine
 from sklearn.svm import SVC
 classifier=SVC(kernel='rbf',degree=300)
 classifier.fit(X,y)
@@ -72,6 +48,7 @@ classifier.fit(X,y)
 # In[9]:
 
 
+#Fit data by using Gradient Boosting Classifier
 from sklearn.ensemble import GradientBoostingClassifier
 classifier=GradientBoostingClassifier()
 classifier.fit(X,y)
